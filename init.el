@@ -138,7 +138,6 @@
 (when *emacs24* (require 'init-company))
 (require 'init-stripe-buffer)
 (require 'init-elnode)
-
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------------
