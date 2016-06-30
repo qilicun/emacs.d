@@ -3,7 +3,8 @@
 ;;(load "/private/miliu/.emacs.d/site-lisp/linum/linum.el")
 (global-linum-mode 1)
 ;;(set linum-format "%d| ")
-
+(display-time)
+(fset 'yes-or-no-p 'y-or-n-p)
 ;;matlab-mode
   (add-to-list 'load-path "~/.emacs.d/site-lisp/matlab-emacs")
   (load-library "matlab-load")
@@ -16,11 +17,13 @@
   '("\\.m$" . matlab-mode))
  (setq matlab-indent-function t)
  (setq matlab-shell-command "matlab")
-
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/yaml-mode")
+(load-library "yaml-mode")
+(require 'yaml-mode)
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; No tabs in files!
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;;(setq indent-tabs-mode 4)
 ;;(setq tab-width 4)
