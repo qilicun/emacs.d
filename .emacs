@@ -1,6 +1,15 @@
 ;;(set-foreground-color "white")
 ;;(set-background-color "black")
 ;;(load "/private/miliu/.emacs.d/site-lisp/linum/linum.el")
+
+(load "desktop")
+(desktop-load-default)
+(desktop-read)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/session")
+(load-library "session")
+(require 'session) 
+(add-hook 'after-init-hook 'session-initialize) 
+
 (global-linum-mode 1)
 ;;(set linum-format "%d| ")
 (display-time)
@@ -22,6 +31,8 @@
 (require 'yaml-mode)
     (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
+(load-library "json")
+(require 'json)
 ;; No tabs in files!
 (setq-default indent-tabs-mode nil)
 
@@ -77,7 +88,7 @@
                    (insert-string
                     (concat
 "/*
-  Copyright " (format-time-string "%Y") " <Insert your organization or name here>.
+  Copyright " (format-time-string "%Y") " Statoil ASA.
 
   This file is part of the Open Porous Media project (OPM).
 
